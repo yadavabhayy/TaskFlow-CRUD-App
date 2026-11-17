@@ -1,0 +1,301 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f3f5fb;
+    color: #20243a;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1050px;
+    margin: 0 auto;
+    padding: 35px 22px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 34px;
+    color: #5145cd;
+    letter-spacing: -1px;
+}
+
+header p {
+    color: #777d91;
+    margin-top: 5px;
+}
+
+.api-status {
+    background: #fff4dc;
+    color: #a66b00;
+    padding: 9px 15px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-bottom: 25px;
+}
+
+.stat-card,
+.task-form,
+.task-section {
+    background: white;
+    border-radius: 14px;
+    padding: 23px;
+    box-shadow: 0 5px 20px rgba(30, 40, 90, 0.05);
+}
+
+.stat-card span {
+    color: #85899b;
+    font-size: 14px;
+}
+
+.stat-card h2 {
+    font-size: 30px;
+    margin-top: 10px;
+    color: #5145cd;
+}
+
+.task-form {
+    margin-bottom: 25px;
+}
+
+.task-form h2,
+.task-section h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 15px 0 8px;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 12px 13px;
+    border: 1px solid #e0e3ed;
+    border-radius: 8px;
+    outline: none;
+    font: inherit;
+    color: #292d40;
+    background: white;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: #6659e8;
+    box-shadow: 0 0 0 3px rgba(102, 89, 232, 0.1);
+}
+
+textarea {
+    min-height: 90px;
+    resize: vertical;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.form-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+button {
+    border: none;
+    padding: 11px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    background: #5b50d6;
+    color: white;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #4338b5;
+    transform: translateY(-1px);
+}
+
+#cancelButton {
+    background: #e9eaf1;
+    color: #45495a;
+}
+
+.task-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.task-heading select {
+    width: auto;
+    min-width: 140px;
+}
+
+.task-list {
+    display: grid;
+    gap: 13px;
+}
+
+.task-card {
+    border: 1px solid #eceef5;
+    border-radius: 10px;
+    padding: 17px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.task-info {
+    min-width: 0;
+}
+
+.task-info h3 {
+    font-size: 16px;
+    margin-bottom: 6px;
+    overflow-wrap: anywhere;
+}
+
+.task-info p {
+    color: #777d91;
+    font-size: 13px;
+    margin-top: 5px;
+    overflow-wrap: anywhere;
+}
+
+.task-actions {
+    display: flex;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.task-actions button {
+    padding: 8px 12px;
+    font-size: 12px;
+}
+
+.edit-btn {
+    background: #e8eaff;
+    color: #5145cd;
+}
+
+.delete-btn {
+    background: #ffe9e9;
+    color: #d13d3d;
+}
+
+.edit-btn:hover {
+    background: #d9dcff;
+}
+
+.delete-btn:hover {
+    background: #ffd6d6;
+}
+
+.status {
+    display: inline-block;
+    padding: 5px 9px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    margin-top: 8px;
+}
+
+.status-To-Do {
+    background: #fff1d9;
+    color: #a56a00;
+}
+
+.status-In-Progress {
+    background: #e6edff;
+    color: #365cc4;
+}
+
+.status-Completed {
+    background: #dff7e9;
+    color: #16834b;
+}
+
+.empty-message {
+    color: #85899b;
+    text-align: center;
+    padding: 35px 10px;
+}
+
+footer {
+    text-align: center;
+    color: #9296a6;
+    font-size: 12px;
+    margin-top: 30px;
+}
+
+@media (max-width: 650px) {
+    .container {
+        padding: 22px 14px;
+    }
+
+    header h1 {
+        font-size: 27px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .stat-card {
+        padding: 17px;
+    }
+
+    .stat-card h2 {
+        font-size: 25px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .task-card {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .task-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .task-heading select {
+        width: 100%;
+    }
+}

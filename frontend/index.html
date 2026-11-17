@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow - Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div>
+                <h1>TaskFlow</h1>
+                <p>Organize your work. Get things done.</p>
+            </div>
+            <span class="api-status" id="apiStatus">Connecting...</span>
+        </header>
+
+        <section class="stats">
+            <div class="stat-card">
+                <span>Total Tasks</span>
+                <h2 id="totalTasks">0</h2>
+            </div>
+            <div class="stat-card">
+                <span>In Progress</span>
+                <h2 id="progressTasks">0</h2>
+            </div>
+            <div class="stat-card">
+                <span>Completed</span>
+                <h2 id="completedTasks">0</h2>
+            </div>
+        </section>
+
+        <section class="task-form">
+            <h2 id="formTitle">Add New Task</h2>
+            <form id="taskForm">
+                <input type="hidden" id="taskId">
+
+                <label for="title">Task Title *</label>
+                <input type="text" id="title" maxlength="100"
+                    placeholder="Enter task title" required>
+
+                <label for="description">Description</label>
+                <textarea id="description" maxlength="500"
+                    placeholder="Enter task description"></textarea>
+
+                <div class="form-row">
+                    <div>
+                        <label for="status">Status</label>
+                        <select id="status">
+                            <option>To Do</option>
+                            <option>In Progress</option>
+                            <option>Completed</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="dueDate">Due Date</label>
+                        <input type="date" id="dueDate">
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" id="submitButton">Add Task</button>
+                    <button type="button" id="cancelButton" hidden>Cancel</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="task-section">
+            <div class="task-heading">
+                <h2>My Tasks</h2>
+                <select id="filterStatus">
+                    <option value="All">All Tasks</option>
+                    <option value="To Do">To Do</option>
+                    <option value="In Progress">In Progress</option>
+                    <option value="Completed">Completed</option>
+                </select>
+            </div>
+            <div id="taskList" class="task-list">
+                <p>Loading tasks...</p>
+            </div>
+        </section>
+
+        <footer>TaskFlow &copy; 2026 | Built with HTML, CSS, JavaScript, Node.js & SQLite</footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
